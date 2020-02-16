@@ -3,6 +3,7 @@
 
 int main()
 {
-	std::cout << "Hi is this working" << std::endl;
+	MovieManagerUI obj;
+	obj.printMenu();
 	return 0;
 }

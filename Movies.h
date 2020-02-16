@@ -3,4 +3,18 @@
 
 #include "Renter.h"
 
+class Movies {
+private:
+    std::string code;
+    std::string name;
+    int countOfRentedCopies= 0;
+    Renter Renters[10];
+
+public: 
+    void rentMovie(Renter renter);
+    void returnRental(int renterID);
+
+
+};
+
 #endif
