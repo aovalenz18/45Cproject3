@@ -5,13 +5,13 @@
 
 class MovieManager {
     private:
-        std::string arrayOfMovies[20];
-        int totalMovies = 0;
+        Movies arrayOfMovies[20];
+        int totalMovies;
 
     public:
         void run();
-        void addMovie(Movie m);
-        void discontinueMovie(Movie m);
+        void addMovie(Movies m);
+        void discontinueMovie(std::string);
         void rentMovie(std::string movieCode, Renter s);
         void returnRental(int renterID, std::string movieCode);
         void printInventory();

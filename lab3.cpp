@@ -3,7 +3,7 @@
 
 int main()
 {
-	MovieManagerUI obj;
-	obj.printMenu();
+	MovieManager obj;
+	obj.run();
 	return 0;
 }
