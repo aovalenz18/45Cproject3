@@ -9,12 +9,14 @@ class MovieManager {
         int totalMovies;
 
     public:
+        MovieManager();
         void run();
         void addMovie(Movies m);
         void discontinueMovie(std::string);
         void rentMovie(std::string movieCode, Renter s);
         void returnRental(int renterID, std::string movieCode);
         void printInventory();
+        
 
 };
 

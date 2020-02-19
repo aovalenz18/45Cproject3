@@ -3,7 +3,7 @@
 #include <cctype>
 #include <cstring>
 #include <cstdio>
-
+#include <sstream>
 void MovieManagerUI::printMenu(){
     std::cout << "Welcome to Movie Rental Kiosk!" << std::endl;
     std::cout << std::endl;
@@ -88,4 +88,28 @@ std::string MovieManagerUI::getCommand(){
         std::cin >> command;  
     }
 
+}
+
+
+Movies MovieManagerUI::addMoviePrompt(){
+    std::string name;
+    std::string code;
+
+    std::cout << "Please enter a movie name: " << std::endl;
+    cin >> name;
+    
+    std::cout << "Please enter a movie code: " << std::endl;
+    cin >> code;
+
+    Movies obj(name, code);
+
+    return obj;
+
+}
+
+std::string MovieManagerUI::discMoviePrompt(){
+    std::string c;
+    std::cout << "Enter movie code: " << std::endl;
+    cin >> c;
+    return c;
 }

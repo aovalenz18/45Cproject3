@@ -2,6 +2,8 @@
 #define MOVIES_H_
 
 #include "Renter.h"
+#include <sstream>
+
 
 class Movies {
 private:
@@ -11,12 +13,15 @@ private:
     Renter Renters[10];
 
 public: 
+    Movies();
+    Movies(std::string name, std::string code);
     void rentMovie(Renter renter);
     void returnRental(int renterID);
     std::string getCode();
-
+    int getRenterID(int id);
+    std::string getRenterInfo();
     int getSizeOfRenters();
-    Renter getRenters();
+    friend ostream& operator << (ostream& os, Movies&);
 };
 
 #endif

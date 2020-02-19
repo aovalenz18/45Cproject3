@@ -1,8 +1,10 @@
 #include "MovieManager.h"
+#include <sstream>
 
 MovieManager::MovieManager()
 {
     this->totalMovies = 0;
+    Movies arrayOfMovies[20];
 }
 
 //shows menu 
@@ -13,39 +15,43 @@ void MovieManager::run() {
     if (command == "rm" || command == "RM" || command == "rM" || command == "Rm")
         {
             std::cout << "rent movie" << std::endl;
-            return command;
-            break;
+            
         }
 
         if (command == "dm" || command == "DM" || command == "dM" || command == "Dm")
         {
-            std::cout << "discontinue movie" << std::endl;
-            return command;
-            break;
+            std:: string code = show.discMoviePrompt();
+            for(int i=0; i<sizeof(arrayOfMovies);i++)
+            {
+                if(code == arrayOfMovies[i].getCode())
+                {
+                    Movies obj;
+                    arrayOfMovies[i] = obj;
+                }
+            }
+           
         }
         if (command == "am" || command == "AM" || command == "aM" || command == "Am")
         {
-            std::cout << "add movie" << std::endl;
-            return command;
-            break;
+            // add movie here
+            Movies m = show.addMoviePrompt(); 
+            
+            
         }
         if (command == "rr" || command == "RR" || command == "rR" || command == "Rr")
         {
             std::cout << "return rental" << std::endl;
-            return command;
-            break;
+            
         }
         if (command == "p" || command == "P" )
         {
             std::cout << "print" << std::endl;
-            return command;
-            break;
+            
         }
         if (command == "q" || command == "Q" )
         {
             std::cout << "quit" << std::endl;
-            return command;
-            break;
+            
         }
 }
 
@@ -82,9 +88,7 @@ void MovieManager::returnRental(int renterID, std::string movieCode) {
     for (int i = 0; i < sizeof(this->arrayOfMovies);i++ ) 
     {
         if (arrayOfMovies[i].getCode() == movieCode) {
-            for (int i = 0; i < arrayOfMovies[i].getSizeOfRenters(); i++) {
-                //access the renters array from movies class: arrayOdMovies[i]
-            }
+            arrayOfMovies[i].getRenterID(renterID);   
         } 
     }
 }
