@@ -11,7 +11,7 @@ class MovieLimitException:public exception{
 
 };
 
-class EmptyMovieException:public exception{
+class EmptyMovieInfoException:public exception{
 
 };
 

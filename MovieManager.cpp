@@ -35,9 +35,11 @@ void MovieManager::run() {
         }
         if (command == "am" || command == "AM" || command == "aM" || command == "Am")
         {
+            // delete [] arrayOfMovies;
+            // this->arrayOfMovies[10];
             // add movie here
             Movies m = show.addMoviePrompt(); 
-            //std:cout << m << std::endl;
+            std:cout << m << std::endl;
             addMovie(m);
             std::cout << this->arrayOfMovies[0] << std::endl;
             std::cout << "Movie has been added" << std::endl;
@@ -71,15 +73,27 @@ void MovieManager::run() {
 //adds movie
 void MovieManager::addMovie(Movies m) {
     std::cout << "Testing:" << std::endl; 
-    std::cout << sizeof(this->arrayOfMovies) << std::endl;
-    if(sizeof(this->arrayOfMovies) == 10)
+    std::cout << this->totalMovies << std::endl;
+    if(this->totalMovies == 20)
     {
         throw MovieLimitException();
     }
+
+    if (m.getCode() == "" || m.getName() == "" ) {
+        throw EmptyMovieInfoException();
+    }
+
+
+    for (int i = 0; i < this->totalMovies; i++) {
+        if (this->arrayOfMovies[i].getCode() == m.getCode() && this->arrayOfMovies[i].getName() == m.getName()){
+            throw DuplicateMovieException();
+        }
+    }
+
     this->arrayOfMovies[this->totalMovies] = m;
     this->totalMovies++;
     std::cout << "Testing:" << std::endl; 
-    std::cout << sizeof(this->arrayOfMovies) << std::endl;
+    std::cout << this->totalMovies << std::endl;
 }
 
 //removes movie

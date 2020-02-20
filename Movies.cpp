@@ -62,9 +62,23 @@ std::string Movies::getRenterInfo(){
 ostream& operator<<(ostream& os, Movies& myMovie){
     std::string movieInfo = "";
     
-    movieInfo = "Movie name: " + myMovie.name + '\n' + "Movie code: " + myMovie.code + "\n" +" Number of Renters: " + to_string(myMovie.countOfRentedCopies) + "\n" + myMovie.getRenterInfo();
-    os << movieInfo;
+    os << "Movie name: " + myMovie.name + '\n' + "Movie code: " + myMovie.code + "\n" +" Number of Renters: " + to_string(myMovie.countOfRentedCopies) + "\n" + myMovie.getRenterInfo();
+    //os << movieInfo;
 
     return os;
 
 }
+
+void Movies::setCode(std::string c){
+    this->code = c;
+}
+
+void Movies::setName(std::string n){
+    this->code = n;
+}
+
+std::string Movies:: getName(){
+    return this->name;
+}
+
+

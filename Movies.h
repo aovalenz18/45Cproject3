@@ -15,6 +15,10 @@ private:
 public: 
     Movies();
     Movies(std::string name, std::string code);
+    void setCode(std::string);
+    void setName(std::string);
+    std::string getName();
+    
     void rentMovie(Renter renter);
     void returnRental(int renterID);
     std::string getCode();
