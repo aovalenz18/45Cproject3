@@ -5,14 +5,14 @@ Movies::Movies() {
     this->name="";
     this->code="";
     this->countOfRentedCopies=0;
-    Renter Renters[10];
+    //Renter Renters[10];
 }
 
 Movies::Movies(std::string name, std::string code) {
     this->name = name;
     this->code = code;
     this->countOfRentedCopies=0;
-    Renter Renters[10];
+    //Renter Renters[10];
 }
 
 void Movies::rentMovie(Renter renter) {
@@ -37,7 +37,7 @@ int Movies::getSizeOfRenters() {
     return sizeof(this->Renters);
 }
 
-void Movies::getRenterID(int id){
+void Movies::removeRenterID(int id){
     for (int i=0;i<sizeof(this->Renters);i++)
     {
         if(id == Renters[i].getRenterID())
@@ -60,9 +60,9 @@ std::string Movies::getRenterInfo(){
 }
 
 ostream& operator<<(ostream& os, Movies& myMovie){
-    std::string movieInfo;
+    std::string movieInfo = "";
     
-    movieInfo += "Movie name: " + myMovie.name + '\n' + "Movie code: " + myMovie.code + "\n" +" Number of Renters: " + to_string(myMovie.countOfRentedCopies) + "\n" + myMovie.getRenterInfo();
+    movieInfo = "Movie name: " + myMovie.name + '\n' + "Movie code: " + myMovie.code + "\n" +" Number of Renters: " + to_string(myMovie.countOfRentedCopies) + "\n" + myMovie.getRenterInfo();
     os << movieInfo;
 
     return os;

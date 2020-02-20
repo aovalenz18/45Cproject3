@@ -8,7 +8,7 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "enter program name, for example ${workspaceFolder}/a.out",
+            "program": "/Users/anthonyvalenzuela/Desktop/lab3/obj",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
@@ -17,18 +17,18 @@
             "MIMode": "lldb"
         },
 
-        {
-            "name": "clang++ build and debug active file",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "/Users/anthonyvalenzuela/Desktop/lab3/obj",
-            "args": [],
-            "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
-            "environment": [],
-            "externalConsole": false,
-            "MIMode": "lldb",
-            "preLaunchTask": "clang++ build active file"
-        }
+        // {
+        //     "name": "clang++ build and debug active file",
+        //     "type": "cppdbg",
+        //     "request": "launch",
+        //     "program": "/Users/anthonyvalenzuela/Desktop/lab3/obj",
+        //     "args": [],
+        //     "stopAtEntry": false,
+        //     "cwd": "${workspaceFolder}",
+        //     "environment": [],
+        //     "externalConsole": false,
+        //     "MIMode": "lldb",
+        //     "preLaunchTask": "clang++ build active file"
+        // }
     ]
 }

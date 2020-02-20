@@ -1,10 +1,11 @@
 #include "MovieManager.h"
 #include <sstream>
+#include <array>
 
 MovieManager::MovieManager()
 {
     this->totalMovies = 0;
-    Movies arrayOfMovies[20];
+    //Movies arrayOfMovies[20];
 }
 
 //shows menu 
@@ -36,7 +37,9 @@ void MovieManager::run() {
         {
             // add movie here
             Movies m = show.addMoviePrompt(); 
-            std:cout << m << std::endl;
+            //std:cout << m << std::endl;
+            addMovie(m);
+            std::cout << this->arrayOfMovies[0] << std::endl;
             std::cout << "Movie has been added" << std::endl;
             show.printMenu();
             //std::string command = show.getCommand();
@@ -67,8 +70,16 @@ void MovieManager::run() {
 
 //adds movie
 void MovieManager::addMovie(Movies m) {
+    std::cout << "Testing:" << std::endl; 
+    std::cout << sizeof(this->arrayOfMovies) << std::endl;
+    if(sizeof(this->arrayOfMovies) == 10)
+    {
+        throw MovieLimitException();
+    }
     this->arrayOfMovies[this->totalMovies] = m;
     this->totalMovies++;
+    std::cout << "Testing:" << std::endl; 
+    std::cout << sizeof(this->arrayOfMovies) << std::endl;
 }
 
 //removes movie
@@ -99,7 +110,7 @@ void MovieManager::returnRental(int renterID, std::string movieCode) {
     {
         if (arrayOfMovies[i].getCode() == movieCode) 
         {
-            arrayOfMovies[i].getRenterID(renterID);   
+            arrayOfMovies[i].removeRenterID(renterID);   
         } 
     }
 }

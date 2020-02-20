@@ -37,7 +37,7 @@ void MovieManagerUI::printMenu(){
 }
 
 std::string MovieManagerUI::getCommand(){
-    MovieManagerUI obj;
+    //MovieManagerUI obj;
 
     std::string command;
     std::cin >> command;

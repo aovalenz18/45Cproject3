@@ -18,7 +18,7 @@ public:
     void rentMovie(Renter renter);
     void returnRental(int renterID);
     std::string getCode();
-    void getRenterID(int id);
+    void removeRenterID(int id);
     std::string getRenterInfo();
     int getSizeOfRenters();
     friend ostream& operator << (ostream& os, Movies&);
