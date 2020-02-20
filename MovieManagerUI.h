@@ -11,6 +11,7 @@ class MovieManagerUI{
         std::string getCommand();
         Movies addMoviePrompt();
         std::string discMoviePrompt();
+        int returnRentalPrompt();
 
 };
 

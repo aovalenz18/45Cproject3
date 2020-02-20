@@ -36,14 +36,17 @@ void MovieManager::run() {
         {
             // add movie here
             Movies m = show.addMoviePrompt(); 
+            std:cout << m << std::endl;
             std::cout << "Movie has been added" << std::endl;
             show.printMenu();
-            std::string command = show.getCommand();
+            //std::string command = show.getCommand();
 
         }
         if (command == "rr" || command == "RR" || command == "rR" || command == "Rr")
         {
                 std::cout << "return rental" << std::endl;
+                int rId = show.returnRentalPrompt();
+
                 
         }
         if (command == "p" || command == "P" )
@@ -54,8 +57,10 @@ void MovieManager::run() {
         if (command == "q" || command == "Q" )
         {
             std::cout << "quit" << std::endl;
-                
+            std:: string command = "q";   
         }
+        std::string command = show.getCommand();
+
     }
     std::cout << "Program terminated" << std::endl;
 }
@@ -92,13 +97,14 @@ void MovieManager::rentMovie(std::string movieCode, Renter s) {
 void MovieManager::returnRental(int renterID, std::string movieCode) {
     for (int i = 0; i < sizeof(this->arrayOfMovies);i++ ) 
     {
-        if (arrayOfMovies[i].getCode() == movieCode) {
+        if (arrayOfMovies[i].getCode() == movieCode) 
+        {
             arrayOfMovies[i].getRenterID(renterID);   
         } 
     }
 }
 
-//fix
+//fix 
 void MovieManager::printInventory() {
     //operator overload?
 }

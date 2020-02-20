@@ -42,52 +42,52 @@ std::string MovieManagerUI::getCommand(){
     std::string command;
     std::cin >> command;
 
-    while(true)
-    {
-        if (command == "rm" || command == "RM" || command == "rM" || command == "Rm")
-        {
-            std::cout << "rent movie" << std::endl;
-            return command;
-            break;
-        }
+    // while(true)
+    // {
+    //     if (command == "rm" || command == "RM" || command == "rM" || command == "Rm")
+    //     {
+    //         std::cout << "rent movie" << std::endl;
+    //         return command;
+    //         break;
+    //     }
 
-        if (command == "dm" || command == "DM" || command == "dM" || command == "Dm")
-        {
-            std::cout << "discontinue movie" << std::endl;
-            return command;
-            break;
-        }
-        if (command == "am" || command == "AM" || command == "aM" || command == "Am")
-        {
-            std::cout << "add movie" << std::endl;
-            return command;
-            break;
-        }
-        if (command == "rr" || command == "RR" || command == "rR" || command == "Rr")
-        {
-            std::cout << "return rental" << std::endl;
-            return command;
-            break;
-        }
-        if (command == "p" || command == "P" )
-        {
-            std::cout << "print" << std::endl;
-            return command;
-            break;
-        }
-        if (command == "q" || command == "Q" )
-        {
-            std::cout << "quit" << std::endl;
-            return command;
-            break;
-        }
+    //     if (command == "dm" || command == "DM" || command == "dM" || command == "Dm")
+    //     {
+    //         std::cout << "discontinue movie" << std::endl;
+    //         return command;
+    //         break;
+    //     }
+    //     if (command == "am" || command == "AM" || command == "aM" || command == "Am")
+    //     {
+    //         std::cout << "add movie" << std::endl;
+    //         return command;
+    //         break;
+    //     }
+    //     if (command == "rr" || command == "RR" || command == "rR" || command == "Rr")
+    //     {
+    //         std::cout << "return rental" << std::endl;
+    //         return command;
+    //         break;
+    //     }
+    //     if (command == "p" || command == "P" )
+    //     {
+    //         std::cout << "print" << std::endl;
+    //         return command;
+    //         break;
+    //     }
+    //     if (command == "q" || command == "Q" )
+    //     {
+    //         std::cout << "quit" << std::endl;
+    //         return command;
+    //         break;
+    //     }
 
 
-        std::cout << "Invalid Command." << std::endl;
-        std::cout << "Enter a command:" << std::endl;  
-        std::cin >> command;  
-    }
-
+    //     std::cout << "Invalid Command." << std::endl;
+    //     std::cout << "Enter a command:" << std::endl;  
+    //     std::cin >> command;  
+    // }
+    return command;
 }
 
 
@@ -112,4 +112,12 @@ std::string MovieManagerUI::discMoviePrompt(){
     std::cout << "Enter movie code: " << std::endl;
     cin >> c;
     return c;
+}
+
+int MovieManagerUI::returnRentalPrompt(){
+    int id;
+    std::cout << "Enter the renter ID: " << std::endl;
+    std::cin >> id;
+    // have to call the return rental function here? 
+    return id;
 }
